@@ -14,11 +14,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # 2. Flutterをセットアップ
-      - name: Set up Flutter
+      # 2. Flutterをセットアップ (バージョン3.27.2を指定)
+      - name: Set up Flutter 3.27.2
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "stable" # 最新の安定版を使用
+          flutter-version: "3.27.2" # 明確にバージョン3.27.2を指定
 
       # 3. Flutterのキャッシュを修復
       - name: Clean Flutter cache
