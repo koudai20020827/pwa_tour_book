@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04 # ビルド環境をubuntu-20.04に変更
 
     steps:
       - name: Checkout code
@@ -16,7 +16,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.7.0" # 使用するFlutterのバージョン
+          flutter-version: "stable" # 最新の安定版を使用
 
       - name: Install dependencies
         run: flutter pub get
