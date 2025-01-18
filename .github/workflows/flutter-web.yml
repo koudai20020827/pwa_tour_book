@@ -28,9 +28,9 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      # 5. Flutter Webアプリをリリースモードでビルド
-      - name: Build the web app
-        run: flutter build web --release --verbose # 詳細なログを表示
+      # 5. Flutter WebアプリをリリースモードでPWAとしてビルド
+      - name: Build the web app as PWA
+        run: flutter build web --release --pwa # PWAとしてビルド
 
       # 6. ビルドディレクトリの内容をリストアップ（デバッグ用）
       - name: List build directory
@@ -40,5 +40,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PWAGITHUBACTION }}
+          github_token: ${{ secrets.PWAGITHUBACTION }} # Personal Access Token（PAT）を使用
           publish_dir: ./build/web
