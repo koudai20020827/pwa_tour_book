@@ -10,20 +10,33 @@ jobs:
     runs-on: ubuntu-20.04 # ビルド環境をubuntu-20.04に変更
 
     steps:
+      # 1. リポジトリのコードをチェックアウト
       - name: Checkout code
         uses: actions/checkout@v2
 
+      # 2. Flutterをセットアップ
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: "stable" # 最新の安定版を使用
 
+      # 3. Flutterのキャッシュを修復
+      - name: Clean Flutter cache
+        run: flutter pub cache repair
+
+      # 4. 依存関係をインストール
       - name: Install dependencies
         run: flutter pub get
 
+      # 5. Flutter Webアプリをリリースモードでビルド
       - name: Build the web app
-        run: flutter build web --release
+        run: flutter build web --release --verbose # 詳細なログを表示
 
+      # 6. ビルドディレクトリの内容をリストアップ（デバッグ用）
+      - name: List build directory
+        run: ls -la ./build/web
+
+      # 7. GitHub Pagesにデプロイ
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
