@@ -30,7 +30,7 @@ jobs:
 
       # 5. Flutter WebアプリをリリースモードでPWAとしてビルド
       - name: Build the web app as PWA
-        run: flutter build web --release --pwa # PWAとしてビルド
+        run: flutter build web # PWAとしてビルド
 
       # 6. ビルドディレクトリの内容をリストアップ（デバッグ用）
       - name: List build directory
