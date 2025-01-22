@@ -35,7 +35,7 @@ jobs:
         run: flutter build web --base-href="/pwa_tour_book/" # 本番用のビルド
 
       - name: GitHub Pagesへのデプロイ
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PWAGITHUBACTION }} # GitHubトークンで認証
           publish_dir: ./build/web # ビルドされたWebアプリのディレクトリ
