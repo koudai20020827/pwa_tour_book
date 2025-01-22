@@ -37,7 +37,7 @@ jobs:
       - name: GitHub Pagesへのデプロイ
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHubトークンで認証
+          github_token: ${{ secrets.PWAGITHUBACTION }} # GitHubトークンで認証
           publish_dir: ./build/web # ビルドされたWebアプリのディレクトリ
           publish_branch: gh-pages # デプロイ先をgh-pagesブランチに変更
           force_orphan: true # 以前の履歴を消して新しいものにする
