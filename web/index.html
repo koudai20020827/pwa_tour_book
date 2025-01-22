@@ -1,21 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-  -->
-    <!-- 
-    GitHub Pagesでは`<base href="/">`に設定することで正しく動作します。
-    PWAとして機能させるために、`/`を基準に設定します。
-  -->
-    <base href="$FLUTTER_BASE_HREF" />
+    <!-- Flutterアプリのベースパス設定 -->
+    <base href="/" />
 
     <!-- iOS PWA向けの設定 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,13 +19,15 @@
     <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
     <meta name="description" content="A new Flutter project." />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="pwa_tour_book" />
+    <meta name="apple-mobile-web-app-title" content="florida_handbook" />
+
+    <!-- iOSアイコン設定 -->
     <link rel="apple-touch-icon" href="icons/Icon-192.png" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>pwa_tour_book</title>
+    <title>florida_handbook</title>
     <link rel="manifest" href="manifest.json" />
 
     <style>
@@ -67,8 +56,52 @@
         background-color: transparent;
       }
     </style>
+
+    <script type="module">
+      // Firebase SDKのインポート
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+      // Firebase設定
+      const firebaseConfig = {
+        apiKey: "AIzaSyCeWQIP17F5R90WRX3CjXmBOlTEasflG4Y",
+        authDomain: "florida-handbook.firebaseapp.com",
+        projectId: "florida-handbook",
+        storageBucket: "florida-handbook.appspot.com",
+        messagingSenderId: "852905012839",
+        appId: "1:852905012839:web:ad22a06bdd5a10aa21eec2",
+        measurementId: "G-FPCMP6RJDM",
+      };
+
+      // Firebaseアプリの初期化
+      window.app = initializeApp(firebaseConfig);
+      console.log("Firebase initialized:", window.app);
+
+      // Firebaseサービスの初期化
+      window.auth = getAuth(window.app);
+      window.analytics = getAnalytics(window.app);
+
+      console.log("Auth service initialized:", window.auth);
+      console.log("Analytics initialized:", window.analytics);
+
+      // ユーザーの認証状態を監視
+      onAuthStateChanged(window.auth, (user) => {
+        if (user) {
+          console.log("User is signed in:", user.uid);
+        } else {
+          console.log("No user signed in.");
+        }
+      });
+    </script>
   </head>
+
   <body>
-    <script src="flutter_bootstrap.js" async></script>
+    <div class="app-container">
+      <script src="flutter_bootstrap.js" async></script>
+    </div>
   </body>
 </html>
