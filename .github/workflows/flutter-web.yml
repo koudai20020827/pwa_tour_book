@@ -32,7 +32,7 @@ jobs:
         run: flutter pub get # pubspec.yaml の依存関係を解決
 
       - name: Flutter Webアプリのビルド
-        run: flutter build web --release --base-href="/florida_handbook/" # 本番用のビルド
+        run: flutter build web --release --base-href="/pwa_tour_book/" # 本番用のビルド
 
       - name: GitHub Pagesへのデプロイ
         uses: peaceiris/actions-gh-pages@v3
