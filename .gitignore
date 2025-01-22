@@ -31,8 +31,8 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 
 # Exclude all build folders, but keep web build for deployment
-/build/*
-!/build/web/
+#/build/*
+#!/build/web/
 
 # Symbolication related
 app.*.symbols
