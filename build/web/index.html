@@ -17,10 +17,6 @@
   -->
     <base href="/pwa_tour_book/" />
 
-    <meta charset="UTF-8" />
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
-    <meta name="description" content="A new Flutter project." />
-
     <!-- iOS PWA向けの設定 -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
@@ -44,6 +40,33 @@
 
     <title>pwa_tour_book</title>
     <link rel="manifest" href="manifest.json" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #f6f2f0; /* 画面遷移時の背景色 */
+        -webkit-touch-callout: none;
+        -webkit-user-select: none; /* WebKitブラウザ向け (Chrome, Safari) */
+        -moz-user-select: none; /* Firefox向け */
+        -ms-user-select: none; /* Internet Explorer向け */
+        user-select: none; /* 標準プロパティ */
+        touch-action: manipulation;
+        overflow: hidden; /* スクロール防止 */
+      }
+
+      .app-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: transparent;
+      }
+    </style>
   </head>
   <body>
     <script src="flutter_bootstrap.js" async></script>
