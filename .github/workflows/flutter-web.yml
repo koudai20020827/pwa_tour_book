@@ -1,61 +1,45 @@
-name: Deploy Flutter Web PWA to GitHub Pages
+name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
     branches:
-      - main # メインブランチへのプッシュ時にトリガー
+      - main # mainブランチにプッシュされたら実行
 
 jobs:
   build:
-    runs-on: ubuntu-20.04 # Ubuntu 20.04環境でビルド
+    runs-on: ubuntu-22.04 # 環境を明示的に指定
 
     steps:
-      # 1. リポジトリのコードをチェックアウト
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: チェックアウトリポジトリ
+        uses: actions/checkout@v3 # リポジトリのコードを取得
 
-      # 2. Flutterをセットアップ（バージョン指定）
-      - name: Set up Flutter 3.27.2
+      - name: 環境変数の設定
+        run: |
+          echo "FLUTTER_STORAGE_BASE_URL=https://storage.googleapis.com" >> $GITHUB_ENV
+          echo "PUB_HOSTED_URL=https://pub.dev" >> $GITHUB_ENV
+
+      - name: Flutterのセットアップ
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.27.2"
+          flutter-version: "3.27.2" # 明示的に最新の安定版を指定
+          channel: stable
+          cache: true
 
-      # 3. Flutterの依存関係をキャッシュ
-      - name: Cache Flutter dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.pub-cache
-          key: ${{ runner.os }}-pub-cache-${{ hashFiles('pubspec.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pub-cache-
+      - name: クリーンビルド
+        run: flutter clean
 
-      # 4. 依存関係をインストール
-      - name: Install dependencies
-        run: flutter pub get
+      - name: 依存関係のインストール
+        run: flutter pub get # pubspec.yaml の依存関係を解決
 
-      # 5. Flutter Webアプリをビルド
-      - name: Build the web app as PWA
-        run: flutter build web
+      - name: Flutter Webアプリのビルド
+        run: flutter build web --release --base-href="/florida_handbook/" # 本番用のビルド
 
-      # 6. ビルドディレクトリを確認（デバッグ用）
-      - name: List build directory
-        run: ls -la ./build/web
-
-      # 7. PWA関連ファイルの確認
-      - name: Verify PWA files
-        run: |
-          if [ ! -f "./build/web/manifest.json" ]; then
-            echo "Error: manifest.json not found."
-            exit 1
-          fi
-          if [ ! -f "./build/web/flutter_service_worker.js" ]; then
-            echo "Error: flutter_service_worker.js not found."
-            exit 1
-          fi
-
-      # 8. GitHub Pagesにデプロイ
-      - name: Deploy to GitHub Pages
+      - name: GitHub Pagesへのデプロイ
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.PWAGITHUBACTION }} # トークン名を明確に変更
-          publish_dir: ./build/web
+          github_token: ${{ secrets.PWAGITHUBACTION }} # GitHubトークンで認証
+          publish_dir: ./build/web # ビルドされたWebアプリのディレクトリ
+          publish_branch: gh-pages # デプロイ先をgh-pagesブランチに変更
+          force_orphan: true # 以前の履歴を消して新しいものにする
+          user_name: "github-actions[bot]" # Botユーザーを明示的に指定
+          user_email: "github-actions[bot]@users.noreply.github.com"
