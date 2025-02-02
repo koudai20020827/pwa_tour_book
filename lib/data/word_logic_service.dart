@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:audio2/data/word_service.dart';
-import 'package:audio2/data/word_model.dart';
-import 'package:audio2/common_utils/enum/sort_enum.dart';
+import 'package:pwa_tour_book/data/word_service.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
+import 'package:pwa_tour_book/common_utils/enum/sort_enum.dart';
 import 'dart:async';
 import 'dart:math';
 import 'package:shared_preferences/shared_preferences.dart';

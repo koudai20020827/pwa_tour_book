@@ -1,6 +1,6 @@
 // text_styles.dart
 import 'package:flutter/material.dart';
-import 'package:audio2/common_utils/colors.dart';
+import 'package:pwa_tour_book/common_utils/colors.dart';
 
 // デフォルトのパディング
 const defaultPadding = 16.0;

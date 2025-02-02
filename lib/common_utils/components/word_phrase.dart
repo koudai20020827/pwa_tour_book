@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:audio2/data/setting_model.dart';
+import 'package:pwa_tour_book/data/setting_model.dart';
 
 class PhraseWords extends StatefulWidget {
   final SettingsModel settings;

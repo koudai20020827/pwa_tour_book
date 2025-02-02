@@ -1,13 +1,13 @@
-import 'package:audio2/screens/home/home.dart';
+import 'package:pwa_tour_book/screens/home/home.dart';
 import 'package:flutter/material.dart';
-import 'package:audio2/data/word_service.dart';
-import 'package:audio2/data/word_model.dart';
-import 'package:audio2/data/json_parse.dart';
-import 'package:audio2/data/setting_model.dart';
+import 'package:pwa_tour_book/data/word_service.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
+import 'package:pwa_tour_book/data/json_parse.dart';
+import 'package:pwa_tour_book/data/setting_model.dart';
 import 'package:provider/provider.dart';
 import 'dart:async';
-import 'package:audio2/data/word_logic_service.dart';
-import 'package:audio2/screens/loading/loading_startup.dart';
+import 'package:pwa_tour_book/data/word_logic_service.dart';
+import 'package:pwa_tour_book/screens/loading/loading_startup.dart';
 
 // メイン関数の最初にスプラッシュ画面を表示するように変更
 void main() async {

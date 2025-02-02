@@ -1,7 +1,7 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:audio2/data/word_model.dart';
-import 'package:audio2/data/word_adapter.dart';
-import 'package:audio2/data/json_parse.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
+import 'package:pwa_tour_book/data/word_adapter.dart';
+import 'package:pwa_tour_book/data/json_parse.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // 取得系

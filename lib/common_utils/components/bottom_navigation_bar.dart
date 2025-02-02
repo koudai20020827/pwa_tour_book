@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:audio2/screens/home/home.dart';
-import 'package:audio2/screens/mypage/mypage.dart';
-import 'package:audio2/screens/search/search.dart';
+import 'package:pwa_tour_book/screens/home/home.dart';
+import 'package:pwa_tour_book/screens/mypage/mypage.dart';
+import 'package:pwa_tour_book/screens/search/search.dart';
 import 'package:provider/provider.dart';
-import 'package:audio2/data/word_service.dart';
-import 'package:audio2/common_utils/colors.dart';
+import 'package:pwa_tour_book/data/word_service.dart';
+import 'package:pwa_tour_book/common_utils/colors.dart';
 
 class MyBottomNavigationBar extends StatefulWidget {
   final int currentIndex;

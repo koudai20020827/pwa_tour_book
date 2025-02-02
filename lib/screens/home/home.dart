@@ -1,9 +1,9 @@
-import 'package:audio2/data/word_service.dart';
+import 'package:pwa_tour_book/data/word_service.dart';
 import 'package:flutter/material.dart';
-import 'package:audio2/screens/wordlist/wordlist.dart';
-import 'package:audio2/common_utils/components/bottom_navigation_bar.dart';
+import 'package:pwa_tour_book/screens/wordlist/wordlist.dart';
+import 'package:pwa_tour_book/common_utils/components/bottom_navigation_bar.dart';
 import 'package:provider/provider.dart';
-import 'package:audio2/common_utils/enum/item_enum.dart';
+import 'package:pwa_tour_book/common_utils/enum/item_enum.dart';
 
 class HomeScreen extends StatefulWidget {
   static String routeName = "/homeScreen";
