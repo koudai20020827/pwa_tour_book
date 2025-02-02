@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:hive/hive.dart';
-import 'package:audio2/data/word_model.dart';
-import 'package:audio2/data/word_logic_service.dart';
-import 'package:audio2/data/word_service.dart';
-import 'package:audio2/screens/wordpage/wordpage.dart';
-import 'package:audio2/screens/wordtest/wordtest.dart';
-import 'package:audio2/common_utils/colors.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
+import 'package:pwa_tour_book/data/word_logic_service.dart';
+import 'package:pwa_tour_book/data/word_service.dart';
+import 'package:pwa_tour_book/screens/wordpage/wordpage.dart';
+import 'package:pwa_tour_book/screens/wordtest/wordtest.dart';
+import 'package:pwa_tour_book/common_utils/colors.dart';
 
 class WordListScreen extends StatefulWidget {
   static String routeName = "/wordList";

@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:pretty_qr_code/pretty_qr_code.dart';
 import 'package:archive/archive.dart';
 import 'package:hive/hive.dart';
-import 'package:audio2/data/word_model.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
 // import 'package:qr_code_scanner/qr_code_scanner.dart';
-import 'package:audio2/common_utils/colors.dart';
+import 'package:pwa_tour_book/common_utils/colors.dart';
 
 class QRCodeUpdateScreen extends StatefulWidget {
   final VoidCallback onReturn;

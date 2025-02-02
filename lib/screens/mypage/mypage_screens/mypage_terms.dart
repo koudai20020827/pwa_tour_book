@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:audio2/common_utils/colors.dart';
+import 'package:pwa_tour_book/common_utils/colors.dart';
 
 class TermsPage extends StatelessWidget {
   const TermsPage({super.key});

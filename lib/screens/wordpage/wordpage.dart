@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:audio2/common_utils/styles.dart';
-import 'package:audio2/data/word_model.dart';
-import 'package:audio2/data/word_logic_service.dart';
+import 'package:pwa_tour_book/common_utils/styles.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
+import 'package:pwa_tour_book/data/word_logic_service.dart';
 import 'package:hive/hive.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:audio2/data/setting_model.dart';
-import 'package:audio2/screens/wordpage/components/wordpage_circularbutton.dart';
-import 'package:audio2/screens/wordpage/components/wordpage_panel.dart';
-import 'package:audio2/screens/wordpage/components/wordpage_words.dart';
-import 'package:audio2/common_utils/components/word_roundedimage.dart';
-import 'package:audio2/common_utils/components/word_sentence.dart';
+import 'package:pwa_tour_book/data/setting_model.dart';
+import 'package:pwa_tour_book/screens/wordpage/components/wordpage_circularbutton.dart';
+import 'package:pwa_tour_book/screens/wordpage/components/wordpage_panel.dart';
+import 'package:pwa_tour_book/screens/wordpage/components/wordpage_words.dart';
+import 'package:pwa_tour_book/common_utils/components/word_roundedimage.dart';
+import 'package:pwa_tour_book/common_utils/components/word_sentence.dart';
 
 class WordPageScreen extends StatefulWidget {
   static String routeName = "/wordPage";

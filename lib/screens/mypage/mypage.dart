@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
-import 'package:audio2/data/setting_model.dart';
-import 'package:audio2/common_utils/components/bottom_navigation_bar.dart';
-import 'package:audio2/screens/mypage/components/mypage_text.dart';
-import 'package:audio2/screens/mypage/components/mypage_navibutton.dart';
-import 'package:audio2/screens/mypage/components/mypage_toggle.dart';
-import 'package:audio2/screens/mypage/mypage_screens/mypage_rule.dart';
-import 'package:audio2/screens/mypage/mypage_screens/mypage_qr.dart';
-import 'package:audio2/screens/mypage/mypage_screens/mypage_terms.dart';
+import 'package:pwa_tour_book/data/setting_model.dart';
+import 'package:pwa_tour_book/common_utils/components/bottom_navigation_bar.dart';
+import 'package:pwa_tour_book/screens/mypage/components/mypage_text.dart';
+import 'package:pwa_tour_book/screens/mypage/components/mypage_navibutton.dart';
+import 'package:pwa_tour_book/screens/mypage/components/mypage_toggle.dart';
+import 'package:pwa_tour_book/screens/mypage/mypage_screens/mypage_rule.dart';
+import 'package:pwa_tour_book/screens/mypage/mypage_screens/mypage_qr.dart';
+import 'package:pwa_tour_book/screens/mypage/mypage_screens/mypage_terms.dart';
 
 class MyPageScreen extends StatefulWidget {
   static String routeName = "/myPageScreen";

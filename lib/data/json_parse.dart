@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:audio2/data/word_model.dart';
+import 'package:pwa_tour_book/data/word_model.dart';
 
 Future<List<Word>> loadWordsFromJson() async {
   try {
